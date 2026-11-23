@@ -186,7 +186,7 @@
       var link = C.linkOf(VIEW, tk), box = document.createElement('div');
       return V.qr(box, link).then(function () {
         var one = '<div class="stk"><b>' + esc(val('f-ask') || t('sh.stk.ask')) + '</b><div class="q">' + box.innerHTML + '</div><small>' + esc(biz ? biz.name : '') + '</small></div>';
-        w.document.write('<!doctype html><meta charset="utf-8"><title>' + esc(t('sh.stk.title')) + '</title><style>body{margin:12mm;font-family:sans-serif}.g{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm}.stk{border:1px dashed #888;padding:4mm;text-align:center;break-inside:avoid}.q{width:38mm;margin:2mm auto}.q svg{width:100%;height:auto}small{display:block}@media print{.np{display:none}}</style><p class="np">' + esc(t('sh.stk.h')) + ' <button onclick="print()">' + esc(t('sv.print')) + '</button></p><div class="g">' + new Array(13).join(one) + '</div>');
+        w.document.write('<!doctype html><meta charset="utf-8"><title>' + esc(t('sh.stk.title')) + '</title><style>body{margin:12mm;font-family:sans-serif}.g{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm}.stk{border:1px dashed #888;padding:4mm;text-align:center;break-inside:avoid}.q{width:38mm;margin:2mm auto}.q svg{width:100%;height:auto}small{display:block}@media print{.np{display:none}}' + NS.pageBoxes(true) + '</style><p class="np">' + esc(t('sh.stk.h')) + ' <button onclick="print()">' + esc(t('sv.print')) + '</button></p><div class="g">' + new Array(13).join(one) + '</div>');
         w.document.close();
       });
     });
